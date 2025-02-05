@@ -1,0 +1,343 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>푸드샵::layout</title>
+    <!--
+        날짜: 2025/02/05
+        이름: 김효경
+        내용: UI 디자인 실습
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px '돋움';
+        }
+
+        ul, ol {list-style: none;}
+        a {text-decoration: none; color: #111;}
+
+        #wrapper {
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
+        header > div {
+            width: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        header > div:nth-child(1) {height: 36px;}
+        header > div:nth-child(2) {height: 100px;}
+        header > div:nth-child(3) {height: 54px;}
+
+        header > div > * {
+            width: 1100px;
+            height: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        main {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
+        main > section {
+            width: 100%;
+            height: auto;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        main > section:nth-child(1) {height: 352px;}
+        main > section:nth-child(2) {height: 520px;}
+        main > section:nth-child(3) {height: 190px;}
+        main > section:nth-child(4) {height: 660px;}
+        main > section:nth-child(5) {height: 200px;}
+        main > section:nth-child(6) {height: 660px;}
+
+        main > section > article {
+            width: 1100px;
+            height: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        main > .slider {}
+        
+        main > .go {}
+
+        main > .go > article {
+            padding: 30px 10px;
+            box-sizing: border-box;
+        }
+        main > .go div {
+            float: left;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+
+        main > .go div:nth-child(1) {width: 412px; height: 450px;}
+        main > .go div:nth-child(2) {width: 322px; height: 220px; margin-left: 11px;}
+        main > .go div:nth-child(3) {float:right; width: 322px; height: 220px;}
+        main > .go div:nth-child(4) {width: 322px; height: 220px; margin-left: 11px; margin-top: 10px;}
+        main > .go div:nth-child(5) {float:right; width: 322px; height: 220px; margin-top: 10px;}
+
+
+        main > .oneday {}
+
+        main > .vegetable {}
+        main > .vegetable > article {}
+        main > .vegetable ul {            
+            width: 100%;
+            height: 312px;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        main > .vegetable ul > li {
+            float: left;
+            width: 25%;
+            height: 100%;
+            border: 1px solid pink;
+            box-sizing: border-box;
+        }        
+
+        main > .premium {}
+        main > .seafood {}
+        main > .seafood > article {}
+        main > .seafood ul {            
+            width: 100%;
+            height: 312px;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        main > .seafood ul > li {
+            float:left;
+            width: 25%;
+            height: 100%;
+            border: 1px solid pink;
+            box-sizing: border-box;
+        }        
+
+        footer {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
+        footer > div {
+            width: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;            
+        }
+
+        footer > div:nth-child(1) {
+            height: 50px;
+        }
+
+        footer > div:nth-child(2) {
+            height: 156px;            
+        }
+
+        footer > div > div {
+            width: 1100px;
+            height: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+
+    </style>
+    
+<style id="mttstyle">
+    #mttContainer {
+      left: 0 !important;
+      top: 0 !important;
+      width: 1000px !important;
+      margin: 0px !important;
+      margin-left: -500px !important;
+      position: fixed !important;
+      z-index: 100000200 !important;
+      background: none !important;
+      pointer-events: none !important;
+      display: inline-block !important;
+      visibility: visible  !important;
+      white-space: pre-line;
+    }
+    .tippy-box[data-theme~="custom"], .tippy-content *{
+      font-size: 18px  !important;
+      text-align: center !important;
+      overflow-wrap: break-word !important;
+      color: #ffffffff !important;
+      font-family: 
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif  !important;
+      white-space: pre-line;
+    }
+    .tippy-box[data-theme~="custom"]{
+      max-width: 200px  !important;
+      backdrop-filter: blur(6px) !important;
+      background-color: #00000080 !important;
+      border: 1px solid #ffffff00; 
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+    [data-tippy-root] {
+      display: inline-block !important;
+      visibility: visible  !important;
+      position: absolute !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before { 
+      border-top-color: #00000080 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+      border-bottom-color: #00000080 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+      border-left-color: #00000080 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+      border-right-color: #00000080 !important;
+    }
+    .mtt-highlight{
+      background-color: #21dc6d40  !important;
+      position: absolute !important;   
+      z-index: 100000100 !important;
+      pointer-events: none !important;
+      display: inline !important;
+      border-radius: 3px !important;
+    }
+    .mtt-image{
+      width: 180px  !important;
+      border-radius: 3px !important;
+    }
+    .ocr_text_div{
+      position: absolute;
+      opacity: 0.5;
+      color: transparent !important;
+      border: 2px solid CornflowerBlue;
+      background: none !important;
+      border-radius: 3px !important;
+    }</style><style id="mttstyleSubtitle">
+    #ytp-caption-window-container .ytp-caption-segment {
+      cursor: text !important;
+      user-select: text !important;
+      font-family: 
+      -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif  !important;
+    }
+    .caption-visual-line{
+      display: flex  !important;
+      align-items: stretch  !important;
+    }
+    .captions-text .caption-visual-line:first-of-type:after {
+      content: '⣿⣿';
+      border-radius: 3px !important;
+      color: white !important;
+      background: transparent !important;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      display: inline-block;
+      vertical-align: top;
+      opacity:0;
+      transition: opacity 0.7s ease-in-out;
+    }
+    .ytp-caption-segment{
+      color: white !important;
+      text-shadow: 1px 1px 2px black !important;
+      background:transparent  !important;
+    }
+    .captions-text:hover .caption-visual-line:first-of-type:after {
+      opacity:1;
+    }
+    .ytp-pause-overlay {
+      display: none !important;
+    }
+    .ytp-expand-pause-overlay .caption-window {
+      display: block !important;
+    }
+  </style></head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <article></article>
+            </div>
+            <div>
+                <nav></nav>
+            </div>
+        </header>
+        <main>
+            <section class="slider">
+                <article></article>
+            </section>
+            <section class="go">
+                <article>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </article>
+            </section>
+            <section class="oneday">
+                <article></article>
+            </section>
+            <section class="vegetable">
+                <article>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="premium">
+                <article></article>
+            </section>
+            <section class="seafood">
+                <article>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </footer>
+    </div>    
+
+</body></html>
