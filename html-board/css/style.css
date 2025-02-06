@@ -71,3 +71,19 @@ footer > p > .version {
 }
 #user > .login > form > table tr {border: 1px solid blue}
 #user > .login > form > table tr > td {border: 1px solid black}
+#user > .login > form > table img {width: 20px;}
+#user > .login > form > .btnLogin {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    width: 60px;
+    height: 52px;
+    background-color: #fdfdfd;
+    border: 1px solid #bebebe;
+}
+#user > .login > form > label {
+    position: absolute;
+    left: 78px;
+    top: 90px;
+    border: 1px solid black;
+}
